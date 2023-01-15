@@ -3,9 +3,11 @@ import { toyService } from "../services/toy.service"
 import { saveToy } from "../store/toy.action"
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { Link, useNavigate, useParams } from "react-router-dom"
+import MultipleSelectChip from "../cmps/multi-select"
 
 export function ToyEdit() {
     const [toyToEdit, setToyToEdit] = useState(toyService.getEmptyToy())
+    const [labels, setLabels] = useState([])
     const { toyId } = useParams()
     const navigate = useNavigate()
 
@@ -14,32 +16,32 @@ export function ToyEdit() {
         loadToy()
     }, [])
 
-    function loadToy() {
-        toyService.get(toyId)
-            .then((toy) => setToyToEdit(toy))
-            .catch((err) => {
-                console.log('Had issues in toy details', err)
-                navigate('/toy')
-            })
+    async function loadToy() {
+        try {
+            const toy = await toyService.get(toyId)
+            setToyToEdit(toy)
+            setLabels(toy.labels)
+        } catch (err) {
+            console.log('Had issues in toy details', err)
+            navigate('/toy')
+        }
     }
 
-    function onSaveToy(ev) {
+    async function onSaveToy(ev) {
         ev.preventDefault()
-        console.log('toyToEdit:', toyToEdit)
-        saveToy(toyToEdit)
-            .then(() => {
-                navigate('/toy')
-                showSuccessMsg('Toy saved!')
-            })
-            .catch(err => {
-                showErrorMsg('Cannot save toy')
-            })
+        try {
+            const toyToSave = { ...toyToEdit, labels }
+            await saveToy(toyToSave)
+            navigate('/toy')
+            showSuccessMsg('Toy saved!')
+        } catch (err) {
+            showErrorMsg('Cannot save toy')
+        }
     }
 
     function handleChange({ target }) {
         let { value, type, name: field } = target
         value = type === 'number' ? +value : value
-        console.log('typeof value:', typeof value)
         setToyToEdit((prevToy) => ({ ...prevToy, [field]: value }))
     }
 
@@ -73,6 +75,7 @@ export function ToyEdit() {
                     <option value='false'>No</option>
                 </select>
 
+                <MultipleSelectChip labels={labels} setLabels={setLabels} />
                 <div>
                     <button>{toyToEdit._id ? 'Save' : 'Add'}</button>
                     <Link to="/toy">Cancel</Link>

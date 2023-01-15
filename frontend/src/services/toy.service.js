@@ -1,11 +1,7 @@
-import { asyncStorageService } from "./async-storage.service"
 import { httpService } from "./http.service"
-import { storageService } from "./storage.service"
-import { utilService } from "./util.service"
 
 const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle', 'Outdoor', 'Battery Powered']
 
-const STORAGE_KEY = 'toyDB'
 const BASE_URL = 'toy/'
 
 
@@ -15,36 +11,28 @@ export const toyService = {
     save,
     get,
     getEmptyToy,
-
+    getDefaultFilter,
 }
 
-function query() {
-    // return asyncStorageService.query(STORAGE_KEY)
-    return httpService.get(BASE_URL)
+function query(filterBy = getDefaultFilter(), sortBy) {
+    const queryParams = `?name=${filterBy.name}&inStock=${filterBy.inStock}&labels=${filterBy.labels}&sortBy=${sortBy}`
+    return httpService.get(BASE_URL + queryParams)
 }
 
 function remove(toyId) {
-    // return asyncStorageService.remove(STORAGE_KEY, toyId)
     return httpService.delete(BASE_URL + toyId)
 }
 
 function save(toy) {
-    // if (toy._id) {
-    //     return asyncStorageService.put(STORAGE_KEY, toy)
-    // } else {
-    //     return asyncStorageService.post(STORAGE_KEY, toy)
-    // }
     if (toy._id) {
-        return httpService.put(BASE_URL, toy)
+        return httpService.put(BASE_URL + toy._id, toy)
     } else {
         return httpService.post(BASE_URL, toy)
     }
 }
 
 function get(toyId) {
-    // return asyncStorageService.get(STORAGE_KEY, toyId)
     return httpService.get(BASE_URL + toyId)
-
 }
 
 function getEmptyToy() {
@@ -55,6 +43,10 @@ function getEmptyToy() {
         createdAt: Date.now(),
         inStock: 'true'
     }
+}
+
+function getDefaultFilter() {
+    return { name: '', inStock: '', labels: [] }
 }
 
 // function _createToys() {

@@ -1,0 +1,75 @@
+.toy-filter {
+    background-color: rgb(226, 226, 226);
+
+    .toy-filter-container {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @include for-narrow-layout {
+            flex-direction: row;
+        }
+
+        .filters {
+            display: grid;
+            grid-template-areas:
+                "text"
+                "inStock"
+                "sortBy"
+                "multi-select";
+            align-items: center;
+
+            @include for-narrow-layout {
+                grid-template-areas:
+                    "text       inStock"
+                    "sortBy     multi-select";
+            }
+
+            @include for-normal-layout {
+                grid-template-areas:
+                    "text   inStock    sortBy   multi-select";
+            }
+
+            .text {
+                grid-area: text;
+            }
+
+            .inStock {
+                grid-area: inStock;
+            }
+
+            .sortBy {
+                grid-area: sortBy;
+            }
+
+            .multi-select {
+                grid-area: multi-select;
+            }
+
+            // .text {
+            //     grid-area: text;
+            // }
+
+            @include for-normal-layout {
+                // flex-direction: row;
+            }
+
+        }
+
+        input,
+        select {
+            background-color: rgb(226, 226, 226);
+            border: none;
+            border-bottom: 1px solid $clr1;
+            margin: 10px 20px;
+            width: 200px;
+            display: block;
+
+            @include for-narrow-layout {
+                display: inline-block;
+            }
+        }
+    }
+}

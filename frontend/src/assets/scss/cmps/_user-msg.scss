@@ -1,0 +1,20 @@
+.user-msg {
+    background-color: $clr1;
+    color: $clr0;
+    padding: 2em;
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    display: flex;
+    align-items: center;
+
+    &.error {
+        color: red;
+    }
+
+    button {
+        float: left;
+        margin: 0;
+        color: $clr0;
+    }
+}

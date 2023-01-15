@@ -1,0 +1,29 @@
+.google-map {
+    display: flex;
+
+    .map-btns {
+        width: 300px;
+        margin-inline: auto;
+
+        h2 {
+            display: inline-block;
+        }
+
+        button {
+            margin-inline: auto;
+            display: block;
+            width: 100px;
+            margin-block: 20px;
+        }
+    }
+
+    .map {
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.223);
+        border-radius: 5px;
+
+        .pin {
+            font-size: 30px;
+        }
+
+    }
+}

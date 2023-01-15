@@ -12,27 +12,25 @@ export function ToyDetails() {
         loadToy()
     }, [toyId])
 
-    function loadToy() {
-        toyService.get(toyId)
-            .then((toy) => setToy(toy))
-            .catch((err) => {
-                console.log('Had issues in toy details', err)
-                showErrorMsg('Cannot load toy')
-                navigate('/toy')
-            })
+    async function loadToy() {
+        try{
+            const toy = await toyService.get(toyId)
+            setToy(toy)
+        } catch (err){
+            console.log('Had issues in toy details', err)
+            showErrorMsg('Cannot load toy')
+            navigate('/toy')
+        }
     }
 
-    function onGoBack() {
-        navigate('/toy')
-    }
 
 
     if (!toy) return <div>Loading...</div>
     return (
-        <section className="toy-details">
+        <section className="toy-details main-layout">
             <h1>Toy: {toy.name}</h1>
             <p>Price: ${toy.price}</p>
-            <button onClick={onGoBack}>Go Back</button>
+            <button><Link to={`/toy`}>Go Back</Link></button>
             <button><Link to={`/toy/edit/${toy._id}`}>Edit</Link></button>
         </section>
     )

@@ -1,0 +1,32 @@
+.toy-list {
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    place-items: center;
+
+    li {
+        height: 480px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        // text-align: center;
+        width: 100%;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.244);
+        border-radius: 5px;
+        padding: 10px;
+
+        &:hover {
+            outline: 3px solid $clr2;
+        }
+    }
+
+    .x-btn {
+        border-radius: 100%;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+    }
+}

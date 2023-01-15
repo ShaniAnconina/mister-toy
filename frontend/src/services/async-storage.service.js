@@ -1,4 +1,4 @@
-export const asyncStorageService = {
+export const storageService = {
     query,
     get,
     post,

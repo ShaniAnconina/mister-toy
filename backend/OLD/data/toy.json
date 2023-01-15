@@ -1,0 +1,122 @@
+[
+  {
+    "_id": "t101",
+    "name": "Remote Control Car",
+    "price": 37,
+    "labels": [
+      "On wheels",
+      "Remote Control"
+    ],
+    "createdAt": 1631031801011,
+    "inStock": "true",
+    "image": "https://static.smallable.com/1568919-720x720q80/.jpg"
+  },
+  {
+    "_id": "t102",
+    "name": "Lego",
+    "price": 70,
+    "labels": [
+      "Family",
+      "Logic"
+    ],
+    "createdAt": 1631031801011,
+    "inStock": "true",
+    "image": "https://cdn.shopify.com/s/files/1/0429/1438/1988/products/LEGO-Classic-Bricks-Box-11717_500x.jpg?v=1597092950"
+  },
+  {
+    "_id": "t103",
+    "name": "Doll House",
+    "price": 50,
+    "labels": [
+      "Pretend Play",
+      "For Girls"
+    ],
+    "createdAt": 1631031801011,
+    "inStock": "true",
+    "image": "https://www.ace.co.il/media/catalog/product/cache/230be187dd2874b1367221e12e8f5484/4/4/4419422_4.png"
+  },
+  {
+    "_id": "t104",
+    "name": "Toy Train Set",
+    "price": 40,
+    "labels": [
+      "Railway",
+      "Electric"
+    ],
+    "createdAt": 1631031801011,
+    "inStock": "true",
+    "image": "https://img.ksp.co.il/item/158288/b_1.jpg?v=5"
+  },
+  {
+    "_id": "t105",
+    "name": "Action Figure",
+    "price": 15,
+    "labels": [
+      "Collectible",
+      "Superhero"
+    ],
+    "createdAt": 1631031801011,
+    "inStock": "true",
+    "image": "https://d3m9l0v76dty0.cloudfront.net/system/photos/9053423/large/c0200a96a53734a849234549b2e008ee.webp"
+  },
+  {
+    "_id": "t106",
+    "name": "Stuffed Hippo",
+    "price": 20,
+    "labels": [
+      "Plush",
+      "Animal"
+    ],
+    "createdAt": 1631031801011,
+    "inStock": "true",
+    "image": "https://target.scene7.com/is/image/Target/GUEST_37d03012-0990-4ec5-9f8c-eeb052da7dff?wid=325&hei=325&qlt=80&fmt=pjpeg"
+  },
+  {
+    "_id": "t107",
+    "name": "Puzzle",
+    "price": 10,
+    "labels": [
+      "Brain Teaser",
+      "Education"
+    ],
+    "createdAt": 1631031801011,
+    "inStock": "true",
+    "image": "https://www.rochi.co.il/wp-content/uploads/2022/03/2_dj07590_djeco_observation_puzzle_jungle_1000x1000_1.jpg"
+  },
+  {
+    "_id": "t108",
+    "name": "Outdoor Game Set",
+    "price": 30,
+    "labels": [
+      "Outdoor",
+      "Sports"
+    ],
+    "createdAt": 1631031801011,
+    "inStock": "true",
+    "image": "https://m.media-amazon.com/images/I/61QsSwfhnkL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+  },
+  {
+    "_id": "t109",
+    "name": "Board Game",
+    "price": 20,
+    "labels": [
+      "Family",
+      "Strategy"
+    ],
+    "createdAt": 1631031801011,
+    "inStock": "true",
+    "image": "https://media-www.canadiantire.ca/product/seasonal-gardening/toys/toys-games/0507703/-classic-games-assortment-4a88c5c9-013e-4b8e-81af-ffaf71184c93.png?imwidth=1024"
+  },
+  {
+    "_id": "t110",
+    "name": "Kite",
+    "price": 5,
+    "labels": [
+      "Outdoor",
+      "Fun"
+    ],
+    "createdAt": 1631031801011,
+    "inStock": "true",
+    "image": "https://static.smallable.com/594719-720x720q80/diamond-kite.jpg"
+  }
+]
